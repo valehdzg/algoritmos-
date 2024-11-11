@@ -1,18 +1,18 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+Brindar información: Escribe un programa que permita al usuario ingresar el nombre de un artista, una película, 
+serie o algo de su preferencia y le brinde información sobre lo que eligió utilizando una estructura Switch; 
+se debera agregar por lo menos 5 casos.
  */
 package com.mycompany.algortimos;
 
-/**
- *
- * @author HP
- */
+import java.util.Scanner;
+
 public class BrindarInformacion {
-     Scanner teclado = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
         
         System.out.println("Ingrese el nombre de un artista, película, serie o algo de su preferencia:");
-        String eleccion = scanner.nextLine().toLowerCase();
+        String eleccion = teclado.nextLine().toLowerCase();
 
         switch (eleccion) {
             case "Adele":
@@ -34,8 +34,6 @@ public class BrindarInformacion {
                 System.out.println("Lo siento, no tengo información sobre esa elección.");
                 break;
         }
-        
-               
-    }
 
+    }
 }
