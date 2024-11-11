@@ -12,25 +12,32 @@ El rango de las calificaciones debe de ser de 0 a 100
 Se debe de calcular la calificacion final usando los porcentajes indicados
 Imprimir el promedio final
 */
+package com.mycompany.algortimos;
 
 import java.util.Scanner;
 
 public class calificacionesFinales {
     public static void main(String[] args) {
-        boolean x = true;
-        do {
-            Scanner teclado = new Scanner(System.in);
-            System.out.print("Ingresa la nota de los parciales: ");
-            double parcial = teclado.nextDouble();
-            System.out.print("Ingresa la nota del proyecto: ");
-            double proyecto = teclado.nextDouble();
-            System.out.print("Ingresa la nota del examen final: ");
-            double examen = teclado.nextDouble();
-            if (parcial > 0 && parcial < 100 || proyecto > 0 && proyecto < 100 || examen > 0 && examen < 100) {
-                double calificacionFInal = (parcial * 0.4) + (proyecto * 0.3) + (examen * 0.5);
-            } else {
-                System.out.println("Alguna calificación no fue introducida correctamente. Intenta de nuevo, por favor.");
-            }
-        } while (x);       
+        Scanner teclado = new Scanner(System.in);
+        System.out.print("Ingrese la calificación de los parciales de 0 a 100: ");
+        double parciales = teclado.nextDouble();
+        if (parciales < 0 || parciales > 100) {
+            System.out.print("Error: la calificación de los parciales debe estar entre 0 y 100.");
+            return;
+        }
+        System.out.print("Ingrese la calificación del proyecto de 0 a 100: ");
+        double proyecto = teclado.nextDouble();
+        if (proyecto < 0 || proyecto > 100) {
+            System.out.print("Error: la calificación del proyecto debe estar entre 0 y 100.");
+            return;
+        }
+        System.out.print("Ingrese la calificación del examen final de 0 a 100:");
+        double examenFinal = teclado.nextDouble();
+        if (examenFinal < 0 || examenFinal > 100) {
+            System.out.print("Error: la calificación del examen final debe estar entre 0 y 100.");
+            return;
+        }
+        double calificacionFinal = (parciales * 0.4) + (proyecto * 0.3) + (examenFinal * 0.3);
+        System.out.printf("La calificación final es: %.2f\n", calificacionFinal);
     }
 }
