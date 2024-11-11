@@ -10,7 +10,7 @@ public class edadVoto {
         Scanner teclado = new Scanner(System.in);
         System.out.print("Introduce tu edad: ");
         int edad = teclado.nextInt();
-        if (edad > 18 && edad < 120) {
+        if (edad >= 18 && edad < 120) {
             System.out.println("Puedes votar.");
         } else if (edad < 18 && edad > 0) {
             System.out.println("No puedes votar.");
